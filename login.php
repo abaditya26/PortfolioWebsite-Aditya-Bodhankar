@@ -16,7 +16,7 @@ if(isset($_POST['email'])){
             echo "user not exists";
         }
     }else{
-        echo "<script>console.log(\""+mysqli_error($conn)+"\");alert('query execution failed. check console.')</script>";
+        echo "<script>console.log(\"".mysqli_error($conn)."\");alert('query execution failed. check console.')</script>";
     }
     exit;
 }
