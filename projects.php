@@ -6,7 +6,7 @@ if (isset($_SESSION['status'])) {
         $login = true;
     }
 }
-// INSERT INTO `projects`(`_id`, `title`, `description`, `link`, `cover`, `author`, `timestamp`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7])
+
 ?>
 
 <div class="container">
@@ -27,3 +27,6 @@ if (isset($_SESSION['status'])) {
         ?>
     </center>
 </div>
+
+
+<?php include "./footer.php"; ?>

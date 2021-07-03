@@ -10,7 +10,7 @@ if(isset($_POST['email'])){
             session_start();
             $_SESSION['status'] = "admin";
             $_SESSION['email'] = $email;
-            $_SESSION['name'] = "";
+            $_SESSION['name'] = mysqli_fetch_row($result)[3];
             header('location:./dashboard.php');
         }else{
             echo "user not exists";
@@ -47,6 +47,4 @@ if(isset($_POST['email'])){
     </main>
 
 
-</body>
-
-</html>
+    <?php include "./footer.php"; ?>

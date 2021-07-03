@@ -35,6 +35,8 @@ if (!isset($_SESSION['ipaddress'])) {
                 echo "<script>console.log(\"" . mysqli_error($conn) . "\");</script>";
             }
         }
+    }else{
+        echo "<script>console.log(\"" . mysqli_error($conn) . "\");</script>";
     }
 
     $_SESSION['ipaddress'] = true;
