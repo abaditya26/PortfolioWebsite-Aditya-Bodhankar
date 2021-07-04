@@ -2,8 +2,6 @@
 <?php
 if(isset($_POST['title'])){
     extract($_POST);
-    print_r($_POST);
-    print_r($_FILES['coverImage']);
 
     if(!isset($_SESSION)){
         session_start();
@@ -13,14 +11,14 @@ if(isset($_POST['title'])){
     date_default_timezone_set("Asia/Kolkata");
     $timestamp=date("d-M-Y h:i:sa");
     $file_temp_loc=$_FILES['coverImage']['tmp_name'];
-    $filestore="images\/".rand(10000000,999999999999).".jpg";
+    $filestore="images\/projects\/".rand(10000000,999999999999).".jpg";
     move_uploaded_file($file_temp_loc,$filestore); 
     $image_path = $filestore;
     include "./database.php";
     $query = "INSERT INTO `projects`(`title`, `description`, `link`, `cover`, `author`, `timestamp`) VALUES ('$title','$description','$link','$image_path','$author','$timestamp')";
     $result = mysqli_query($conn, $query);
     if($result){
-        echo "<script>alert('project added');docuent.location='./';</script>";
+        echo "<script>alert('project added');document.location='./';</script>";
     }else{
         echo "<script>console.log(\"".mysqli_error($conn)."\");alert('project not added');document.location='./add-project.php';</script>";
     }

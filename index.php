@@ -1,4 +1,7 @@
 <?php include "./header.php"; ?>
+<?php
+    
+?>
 <div class="container">
     <img id="tilt" class="rounded-circle d-block mx-auto m-3 aos-init aos-animate" src="Images/background.jpg" height="256" width="256" data-aos="zoom-in-up">
     <br>
@@ -46,15 +49,7 @@
                             Shield Website </h5>
                         <p class="">
                         </p>
-                        <p>Designed by:</p>
-
-                        <p>Aditya Bodhankar</p>
-
-                        <p>Kalpak Nemade</p>
-
-                        <p>Vishal Chaudhari</p>
-
-                        <p>Mahesh Pimparkar</p>
+                        <p>Designed by:<br>Aditya Bodhankar<br>Kalpak Nemade<br>Vishal Chaudhari<br>Mahesh Pimparkar</p>
                         <p></p>
                     </div>
                 </div>

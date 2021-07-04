@@ -7,7 +7,7 @@ $ipcount = 0;
 if($result){
     $ipcount = mysqli_num_rows($result);
 }else{
-    echo "ip count failed";
+    echo "<script>colsole.log('ip count error');console.log(\"".mysqli_error($conn)."\");</script>";
 }
 
 $query = "SELECT SUM(`count`) FROM ipcount;";
@@ -16,7 +16,16 @@ $visits = 0;
 if($result){
     $visits = mysqli_fetch_row($result)[0];
 }else{
-    echo "user count fail";
+    echo "<script>colsole.log('ip sum error');console.log(\"".mysqli_error($conn)."\");</script>";
+}
+
+$query = "SELECT COUNT(*) FROM projects";
+$result = mysqli_query($conn, $query);
+$projectCount = 0;
+if($result){
+    $projectCount = mysqli_fetch_row($result)[0];
+}else{
+    echo "<script>console.log(\"".mysqli_error($conn)."\");</script>";
 }
 ?>
 <div class="container" style="margin-top: 5%;">
@@ -39,7 +48,7 @@ if($result){
                         <h3>
                             Total Projects
                             <br>
-                            1
+                            <?php echo $projectCount; ?>
                             <br>
                             <a href="./projects.php" class="btn btn-outline-success">Manage Projects</a>
                         </h3>
