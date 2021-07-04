@@ -13,7 +13,7 @@ if(isset($_POST['email'])){
             $_SESSION['name'] = mysqli_fetch_row($result)[3];
             header('location:./dashboard.php');
         }else{
-            echo "user not exists";
+            echo "<script>alert('user credentials not match');document.location='./';</script>";
         }
     }else{
         echo "<script>console.log(\"".mysqli_error($conn)."\");alert('query execution failed. check console.')</script>";
