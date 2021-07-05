@@ -18,7 +18,7 @@ if(isset($_POST['title'])){
     $query = "INSERT INTO `projects`(`title`, `description`, `link`, `cover`, `author`, `timestamp`) VALUES ('$title','$description','$link','$image_path','$author','$timestamp')";
     $result = mysqli_query($conn, $query);
     if($result){
-        echo "<script>alert('project added');document.location='./';</script>";
+        echo "<script>alert('project added');document.location='./projects.php';</script>";
     }else{
         echo "<script>console.log(\"".mysqli_error($conn)."\");alert('project not added');document.location='./add-project.php';</script>";
     }
