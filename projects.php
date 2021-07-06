@@ -57,6 +57,11 @@ if ($result) {
                                 <img src="<?php echo $projects[$i][4]; ?>" style="max-width: 100%; max-height: 300px;"><br><br>
                             </center>
                             <?php echo $projects[$i][2]; ?>
+                            <center style='font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;'>
+                                <small>
+                                HTML, CSS, JS
+                                </small>
+                            </center>
                         </p>
                         <a href="<?php echo $projects[$i][3]; ?>" target="_blank" class="btn btn-primary">Visit Project</a>
                         <?php if($login){

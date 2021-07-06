@@ -12,6 +12,18 @@ if ($result) {
     echo "error";
 }
 ?>
+
+<style>
+.desc-div{
+    padding-right: 20px;
+    border-radius: 10px;
+}
+.desc-div-2{
+    padding-left: 20px;
+    border-radius: 10px;
+}
+</style>
+
 <div class="container">
     <img id="tilt" class="rounded-circle d-block mx-auto m-3 aos-init aos-animate" src="./images/background.jpg" height="256" width="256" data-aos="zoom-in-up">
     <br>
@@ -45,7 +57,7 @@ if ($result) {
         <br>
     </center>
     <hr class="hr" style="border-color: white;">
-    <br><br>
+    <br>
     <section id="projects" style="padding-top: 20px; padding-bottom: 20px;">
         <div class="container">
             <center>
@@ -53,7 +65,7 @@ if ($result) {
                     <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-file-earmark-zip-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M2 3a2 2 0 0 1 2-2h.5v1h1v1h-1v1h1v1h-1v1h1v1H7V6H6V5h1V4H6V3h1V2H6V1h3.293a1 1 0 0 1 .707.293L13.707 5a1 1 0 0 1 .293.707V13a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V3zm7 2V2l4 4h-3a1 1 0 0 1-1-1zM5.5 7.5a1 1 0 0 0-1 1v.938l-.4 1.599a1 1 0 0 0 .416 1.074l.93.62a1 1 0 0 0 1.109 0l.93-.62a1 1 0 0 0 .415-1.074l-.4-1.599V8.5a1 1 0 0 0-1-1h-1zm0 1.938V8.5h1v.938a1 1 0 0 0 .03.243l.4 1.598-.93.62-.93-.62.4-1.598a1 1 0 0 0 .03-.243z"></path>
                     </svg>
-                    Recent Project
+                    Some Things I’ve Built
                 </h2><br><br>
                 <?php for ($i = 0; $i < sizeof($projects); $i++) { ?>
                     <?php if ($i % 2 == 0) { ?>
@@ -63,11 +75,11 @@ if ($result) {
                                     <img src="<?php echo $projects[$i][4]; ?>" class="img-projects" style="border: inset; border-radius: 10px; object-fit: contain;">
                                 </div>
                             </div>
-                            <div class="col-md-6 from-right slide-in disappear" style="padding-top:20px">
+                            <div class="col-md-6 from-right slide-in disappear" style="padding:20px;text-align: right;">
                                 <h5 class="">
                                     <?php echo $projects[$i][1]; ?>
                                 </h5>
-                                <p class="">
+                                <p class="desc-div">
                                     <?php echo $projects[$i][2]; ?>
                                     <br><br>
                                     <a href="<?php echo $projects[$i][3]; ?>" target="_blank" class="btn btn-outline-success">Visit Site</a>
@@ -76,11 +88,11 @@ if ($result) {
                         </div>
                     <?php } else { ?>
                         <div class="row" style="margin-top: -2.5px; margin-left: 10px; margin-right: 25px; border-bottom-left-radius: 10px; border-top-left-radius: 10px; padding:20px; border-left: dotted;border-top:dotted;border-bottom:dotted;">
-                            <div class="col-md-6 from-right slide-in disappear" style="padding-top:20px">
+                            <div class="col-md-6 from-right slide-in disappear" style="padding-top:20px;text-align: left;">
                                 <h5 class="">
                                     <?php echo $projects[$i][1]; ?>
                                 </h5>
-                                <p class="">
+                                <p class="desc-div-2">
                                     <?php echo $projects[$i][2]; ?>
                                     <br><br>
                                     <a href="<?php echo $projects[$i][3]; ?>" target="_blank" class="btn btn-outline-success">Visit Site</a>

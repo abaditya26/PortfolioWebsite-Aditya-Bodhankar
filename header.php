@@ -70,7 +70,7 @@ if (!isset($_SESSION)) {
 
         .img-projects {
             width: 100%;
-            max-height: 250px;
+            max-height: 300px;
             object-fit: cover;
         }
 
