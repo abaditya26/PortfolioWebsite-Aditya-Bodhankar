@@ -24,7 +24,6 @@ if ($result) {
         padding-left: 20px;
         border-radius: 10px;
     }
-
 </style>
 
 <div class="container">
@@ -36,6 +35,7 @@ if ($result) {
             <h3 class="font_4">
                 Aditya Ashok Bodhankar
             </h3>
+            <h4></h4>
             <br>
             <a class="btn" target="_blank" href="https://www.instagram.com/ab_aditya_26">
                 <img src="./images/insta.png" style="max-width: 40px;">
@@ -87,10 +87,10 @@ if ($result) {
                 ];
                 for ($i = 0; $i < sizeof($languages); $i++) {
                 ?>
-                    <img src="./images/logos/<?php echo $languages[$i][1]; ?>" title="<?php echo $languages[$i][0]; ?>" style="max-width:50px; margin-right:15px;">
-                <?php
+                    <img src=" ./images/logos/<?php echo $languages[$i][1]; ?>" title="<?php echo $languages[$i][0]; ?>" style="max-width:50px; margin-right:15px;">
+            <?php
                 }
-                ?>
+            ?>
             </span>
             <h4>
                 Frameworks
@@ -104,29 +104,30 @@ if ($result) {
                 ];
                 for ($i = 0; $i < sizeof($frameworks); $i++) {
                 ?>
-                    <img src="./images/logos/<?php echo $frameworks[$i][1]; ?>" title="<?php echo $frameworks[$i][0]; ?>" style="max-width:50px; margin-right:15px;">
-                <?php
+                    <img src=" ./images/logos/<?php echo $frameworks[$i][1]; ?>" title="<?php echo $frameworks[$i][0]; ?>" style="max-width:50px; margin-right:15px;">
+            <?php
                 }
-                ?>
+            ?>
             </span>
             <h4>
-                Tools
+                Tools & Editors
             </h4>
             <span class="aos-init" data-aos="zoom-in-down"">
                 <?php
                 $tools = [
+                    ["Firebase", "firebase.png"],
+                    ["GitHub", "github.png"],
                     ["VS Code", "vscode.png"],
                     ["Android Studio", "android-studio.png"],
                     ["IntelliJ", "intellij.png"],
                     ["PyCharm", "pycharm.png"],
-                    ["Firebase", "firebase.png"],
                 ];
                 for ($i = 0; $i < sizeof($tools); $i++) {
                 ?>
-                    <img src="./images/logos/<?php echo $tools[$i][1]; ?>" title="<?php echo $tools[$i][0]; ?>" style="max-width:50px; margin-right:15px;">
-                <?php
+                    <img src=" ./images/logos/<?php echo $tools[$i][1]; ?>" title="<?php echo $tools[$i][0]; ?>" style="max-width:50px; margin-right:15px;">
+            <?php
                 }
-                ?>
+            ?>
             </span>
             <h4>
                 Databases
@@ -140,10 +141,10 @@ if ($result) {
                 ];
                 for ($i = 0; $i < sizeof($database); $i++) {
                 ?>
-                    <img src="./images/logos/<?php echo $database[$i][1]; ?>" title="<?php echo $database[$i][0]; ?>" style="max-height:50px; margin-right:15px;">
-                <?php
+                    <img src=" ./images/logos/<?php echo $database[$i][1]; ?>" title="<?php echo $database[$i][0]; ?>" style="max-height:50px; margin-right:15px;">
+            <?php
                 }
-                ?>
+            ?>
             </span>
         </center>
     </section>

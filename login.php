@@ -1,4 +1,14 @@
 <?php
+
+session_start();
+
+if(isset($_SESSION['status'])){
+    if($_SESSION['status']=="admin"){
+        echo "<script>document.location='./dashboard.php';</script>";
+    }
+}
+
+
 if (isset($_POST['email'])) {
     extract($_POST);
     include "./database.php";
@@ -7,7 +17,9 @@ if (isset($_POST['email'])) {
     if ($result) {
         if (mysqli_num_rows($result) == 1) {
             echo "user exists";
-            session_start();
+            if(!isset($_SESSION)){
+                session_start();
+            }
             $_SESSION['status'] = "admin";
             $_SESSION['email'] = $email;
             $_SESSION['name'] = mysqli_fetch_row($result)[3];

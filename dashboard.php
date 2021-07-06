@@ -1,5 +1,14 @@
 <?php include "./header.php"; ?>
 <?php
+
+if(isset($_SESSION['status'])){
+    if($_SESSION['status']!="admin"){
+        echo "<script>document.location='./';</script>";
+    }
+}else{
+    echo "<script>document.location='./';</script>";
+}
+
 include "./database.php";
 $query = "SELECT * FROM ipcount";
 $result = mysqli_query($conn, $query);

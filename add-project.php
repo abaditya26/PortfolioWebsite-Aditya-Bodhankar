@@ -1,5 +1,15 @@
 
 <?php
+
+if(isset($_SESSION['status'])){
+    if($_SESSION['status']!="admin"){
+        echo "<script>document.location='./';</script>";
+    }
+}else{
+    echo "<script>document.location='./';</script>";
+}
+
+
 if(isset($_POST['title'])){
     extract($_POST);
 

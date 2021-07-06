@@ -2,10 +2,10 @@
 $login = false;
 if (!isset($_SESSION)) {
     session_start();
-    if (isset($_SESSION["status"])) {
-        if ($_SESSION['status']) {
-            $login = true;
-        }
+}
+if (isset($_SESSION["status"])) {
+    if ($_SESSION['status']) {
+        $login = true;
     }
 }
 ?>
