@@ -35,10 +35,15 @@ if (!isset($_SESSION['ipaddress'])) {
                 echo "<script>console.log(\"" . mysqli_error($conn) . "\");</script>";
             }
         }
-    }else{
+    } else {
         echo "<script>console.log(\"" . mysqli_error($conn) . "\");</script>";
     }
 
     $_SESSION['ipaddress'] = true;
 }
 ?>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>

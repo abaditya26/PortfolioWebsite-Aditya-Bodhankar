@@ -62,7 +62,7 @@ if($result){
             <input type="url" name="link" id="link" class="form-control" required placeholder="Enter URL of Site" value="<?php echo $projectData[3]; ?>">
         </div><br>
         <div class="form-group">
-            <input type="submit" value="Add Project" class="btn btn-success">
+            <input type="submit" value="Update Project Data" class="btn btn-success">
             <input type="reset" value="Reset Form" class="btn btn-danger">
         </div>
     </form>

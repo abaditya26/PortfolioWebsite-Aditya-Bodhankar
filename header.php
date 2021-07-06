@@ -17,6 +17,7 @@ if (!isset($_SESSION)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aditya Bodhankar</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <style>
         .font_4 {
             font: normal normal normal 48px 'playfair display', serif;
@@ -70,7 +71,7 @@ if (!isset($_SESSION)) {
 
         .img-projects {
             width: 100%;
-            max-height: 300px;
+            max-height: 250px;
             object-fit: cover;
         }
 
@@ -104,8 +105,13 @@ if (!isset($_SESSION)) {
             border-top-left-radius: 0;
             border-top-right-radius: 0;
         }
+        .footer{
+            padding: 10px;
+            background: rgba(1, 1, 1, 0.8);
+        }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
 </head>
 
 <body>

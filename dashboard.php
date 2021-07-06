@@ -33,7 +33,7 @@ if($result){
     <div class="row">
         <div class="col-md-4">
             <center>
-                <img src="./images/background.jpg" alt="Profile Image" style="max-height: 200px; max-width: 200px; object-fit: scale-down;" class="img-projects">
+                <img src="./images/profile.jpg" alt="Profile Image" style="border-radius: 50% ; border: inset; max-height: 200px; max-width: 200px; object-fit: scale-down;" class="img-projects">
                 <br>
                 <br>
                 <h4>
