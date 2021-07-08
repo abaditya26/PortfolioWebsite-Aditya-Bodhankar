@@ -1,11 +1,11 @@
 <?php include "./header.php"; ?>
 <?php
 
-if(isset($_SESSION['status'])){
-    if($_SESSION['status']!="admin"){
+if (isset($_SESSION['status'])) {
+    if ($_SESSION['status'] != "admin") {
         echo "<script>document.location='./';</script>";
     }
-}else{
+} else {
     echo "<script>document.location='./';</script>";
 }
 
@@ -13,28 +13,28 @@ include "./database.php";
 $query = "SELECT * FROM ipcount";
 $result = mysqli_query($conn, $query);
 $ipcount = 0;
-if($result){
+if ($result) {
     $ipcount = mysqli_num_rows($result);
-}else{
-    echo "<script>colsole.log('ip count error');console.log(\"".mysqli_error($conn)."\");</script>";
+} else {
+    echo "<script>colsole.log('ip count error');console.log(\"" . mysqli_error($conn) . "\");</script>";
 }
 
 $query = "SELECT SUM(`count`) FROM ipcount;";
 $result = mysqli_query($conn, $query);
 $visits = 0;
-if($result){
+if ($result) {
     $visits = mysqli_fetch_row($result)[0];
-}else{
-    echo "<script>colsole.log('ip sum error');console.log(\"".mysqli_error($conn)."\");</script>";
+} else {
+    echo "<script>colsole.log('ip sum error');console.log(\"" . mysqli_error($conn) . "\");</script>";
 }
 
 $query = "SELECT COUNT(*) FROM projects";
 $result = mysqli_query($conn, $query);
 $projectCount = 0;
-if($result){
+if ($result) {
     $projectCount = mysqli_fetch_row($result)[0];
-}else{
-    echo "<script>console.log(\"".mysqli_error($conn)."\");</script>";
+} else {
+    echo "<script>console.log(\"" . mysqli_error($conn) . "\");</script>";
 }
 ?>
 <div class="container" style="margin-top: 5%;">

@@ -9,7 +9,7 @@ if ($result) {
         array_push($projects, $row);
     }
 } else {
-    echo "error";
+    echo "<script>console.log('error db'); document.location='./';</script>";
 }
 
 ?>
@@ -73,7 +73,7 @@ if ($result) {
             <h4>
                 Languages
             </h4>
-            <span class="aos-init" data-aos="zoom-in-down"">
+            <span class="aos-init" data-aos="zoom-in-down">
                 <?php
                 $languages = [
                     ["HTML", "html.png"],
@@ -88,14 +88,14 @@ if ($result) {
                 for ($i = 0; $i < sizeof($languages); $i++) {
                 ?>
                     <img src=" ./images/logos/<?php echo $languages[$i][1]; ?>" title="<?php echo $languages[$i][0]; ?>" style="max-width:50px; margin-right:15px;">
-            <?php
+                <?php
                 }
-            ?>
+                ?>
             </span>
             <h4>
                 Frameworks
             </h4>
-            <span class="aos-init" data-aos="zoom-in-down"">
+            <span class="aos-init" data-aos="zoom-in-down">
                 <?php
                 $frameworks = [
                     ["Flutter", "flutter.png"],
@@ -105,14 +105,14 @@ if ($result) {
                 for ($i = 0; $i < sizeof($frameworks); $i++) {
                 ?>
                     <img src=" ./images/logos/<?php echo $frameworks[$i][1]; ?>" title="<?php echo $frameworks[$i][0]; ?>" style="max-width:50px; margin-right:15px;">
-            <?php
+                <?php
                 }
-            ?>
+                ?>
             </span>
             <h4>
                 Tools & Editors
             </h4>
-            <span class="aos-init" data-aos="zoom-in-down"">
+            <span class="aos-init" data-aos="zoom-in-down">
                 <?php
                 $tools = [
                     ["Firebase", "firebase.png"],
@@ -125,14 +125,14 @@ if ($result) {
                 for ($i = 0; $i < sizeof($tools); $i++) {
                 ?>
                     <img src=" ./images/logos/<?php echo $tools[$i][1]; ?>" title="<?php echo $tools[$i][0]; ?>" style="max-width:50px; margin-right:15px;">
-            <?php
+                <?php
                 }
-            ?>
+                ?>
             </span>
             <h4>
                 Databases
             </h4>
-            <span class="aos-init" data-aos="zoom-in-down"">
+            <span class="aos-init" data-aos="zoom-in-down">
                 <?php
                 $database = [
                     ["MySQL", "mysql.png"],
@@ -142,9 +142,9 @@ if ($result) {
                 for ($i = 0; $i < sizeof($database); $i++) {
                 ?>
                     <img src=" ./images/logos/<?php echo $database[$i][1]; ?>" title="<?php echo $database[$i][0]; ?>" style="max-height:50px; margin-right:15px;">
-            <?php
+                <?php
                 }
-            ?>
+                ?>
             </span>
         </center>
     </section>
@@ -179,7 +179,7 @@ if ($result) {
                             </div>
                         </div>
                     <?php } else { ?>
-                        <div class="row" style="margin-top: -2.5px; margin-left: 10px; margin-right: 25px; border-bottom-left-radius: 10px; border-top-left-radius: 10px; padding:20px; border-left: dotted;border-top:dotted;border-bottom:dotted;">
+                        <div class="row" style="margin-top: -2.0px; margin-left: 10px; margin-right: 25px; border-bottom-left-radius: 10px; border-top-left-radius: 10px; padding:20px; border-left: dotted;border-top:dotted;border-bottom:dotted;">
                             <div class="col-md-6 aos-init" data-aos="fade-left" style="padding-top:20px;text-align: left;">
                                 <h5 class="">
                                     <?php echo $projects[$i][1]; ?>
@@ -200,7 +200,7 @@ if ($result) {
                 <?php } ?>
                 <br>
                 <a href="./projects.php" class="btn btn-outline-light">
-                    + View More
+                    + View All Work
                 </a>
             </center>
         </div>
