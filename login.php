@@ -1,14 +1,10 @@
 <?php
-
 session_start();
-
 if (isset($_SESSION['status'])) {
     if ($_SESSION['status'] == "admin") {
         echo "<script>document.location='./dashboard.php';</script>";
     }
 }
-
-
 if (isset($_POST['email'])) {
     extract($_POST);
     include "./database.php";
@@ -45,7 +41,6 @@ if (isset($_POST['email'])) {
         </center>
         <br>
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
         <div class="form-floating">
             <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" autocomplete="off">
             <label for="email">Email address</label>
@@ -57,6 +52,4 @@ if (isset($_POST['email'])) {
         <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
     </form>
 </main>
-
-
 <?php include "./footer.php"; ?>

@@ -18,7 +18,6 @@ if ($result) {
 } else {
     echo "<script>console.log('unable to fetch projects');console.log(\"" . mysqli_error($conn) . "\");</script>";
 }
-
 ?>
 
 <div class="container">
@@ -29,11 +28,9 @@ if ($result) {
         </h3>
         <?php
         if ($login) {
-
         ?>
             <a href="./add-project.php" class="btn btn-outline-primary">Add New Project</a>
         <?php
-
         }
         ?>
     </center>
@@ -88,6 +85,5 @@ if ($result) {
         ?>
     </div>
 </div>
-
 
 <?php include "./footer.php"; ?>
