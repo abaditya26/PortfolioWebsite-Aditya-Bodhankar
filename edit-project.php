@@ -1,36 +1,35 @@
-
 <?php
 session_start();
-if(isset($_SESSION['status'])){
-    if($_SESSION['status']!="admin"){
+if (isset($_SESSION['status'])) {
+    if ($_SESSION['status'] != "admin") {
         echo "<script>document.location='./';</script>";
     }
-}else{
+} else {
     echo "<script>document.location='./';</script>";
 }
 
 
-if(isset($_POST['title'])){
+if (isset($_POST['title'])) {
     extract($_POST);
 
-    if(!isset($_SESSION)){
+    if (!isset($_SESSION)) {
         session_start();
     }
 
     include "./database.php";
     $query = "UPDATE projects SET title = '$title', description='$description', link='$link' WHERE _id=$id";
     $result = mysqli_query($conn, $query);
-    if($result){
+    if ($result) {
         echo "<script>alert('project updated');document.location='./projects.php';</script>";
-    }else{
-        echo "<script>console.log('edit fail');console.log(\"".mysqli_error($conn)."\");</script>";
+    } else {
+        echo "<script>console.log('edit fail');console.log(\"" . mysqli_error($conn) . "\");</script>";
     }
     exit;
 }
 $id = "-1";
-if(isset($_GET['id'])){
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
-}else{
+} else {
     echo "<script>document.location='./';</script>";
     exit;
 }
@@ -38,12 +37,12 @@ include "./database.php";
 $query = "SELECT * FROM projects WHERE _id=$id";
 $result = mysqli_query($conn, $query);
 $projectData = [];
-if($result){
-    while($row = mysqli_fetch_row($result)){
+if ($result) {
+    while ($row = mysqli_fetch_row($result)) {
         $projectData = $row;
     }
-}else{
-    echo "<script>console.log('edit fetch fail');console.log(\"".mysqli_error($conn)."\");</script>";
+} else {
+    echo "<script>console.log('edit fetch fail');console.log(\"" . mysqli_error($conn) . "\");</script>";
 }
 ?>
 <?php include "./header.php"; ?>
@@ -65,7 +64,7 @@ if($result){
         </div><br>
         <div class="form-group">
             <label for="description">Description Of Project</label>
-            <textarea name="description" id="description" cols="30" rows="10" class="form-control"  placeholder="Enter Description Of Project"><?php echo $projectData[2]; ?></textarea>
+            <textarea name="description" id="description" cols="30" rows="10" class="form-control" placeholder="Enter Description Of Project"><?php echo $projectData[2]; ?></textarea>
         </div><br>
         <div class="form-group">
             <label for="link">Link Of the Project</label>

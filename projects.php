@@ -47,7 +47,8 @@ if ($result) {
             padding: 20px;
             transition: ease 1.2s;
         }
-        .card:hover{
+
+        .card:hover {
             box-shadow: inset 8px -8px 10px #c7c7c7,
                 inset -8px 8px 10px #313131;
             transition: ease 1.2s;

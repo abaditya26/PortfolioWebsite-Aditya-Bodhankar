@@ -2,8 +2,8 @@
 
 session_start();
 
-if(isset($_SESSION['status'])){
-    if($_SESSION['status']=="admin"){
+if (isset($_SESSION['status'])) {
+    if ($_SESSION['status'] == "admin") {
         echo "<script>document.location='./dashboard.php';</script>";
     }
 }
@@ -17,7 +17,7 @@ if (isset($_POST['email'])) {
     if ($result) {
         if (mysqli_num_rows($result) == 1) {
             echo "user exists";
-            if(!isset($_SESSION)){
+            if (!isset($_SESSION)) {
                 session_start();
             }
             $_SESSION['status'] = "admin";
