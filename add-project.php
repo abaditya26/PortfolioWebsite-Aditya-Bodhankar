@@ -1,5 +1,4 @@
 <?php
-
 if (isset($_SESSION['status'])) {
     if ($_SESSION['status'] != "admin") {
         echo "<script>document.location='./';</script>";
@@ -8,14 +7,11 @@ if (isset($_SESSION['status'])) {
     echo "<script>document.location='./';</script>";
 }
 
-
 if (isset($_POST['title'])) {
     extract($_POST);
-
     if (!isset($_SESSION)) {
         session_start();
     }
-
     $author = $_SESSION['name'];
     date_default_timezone_set("Asia/Kolkata");
     $timestamp = date("d-M-Y h:i:sa");
@@ -33,9 +29,9 @@ if (isset($_POST['title'])) {
     }
     exit;
 }
-?>
 
-<?php include "./header.php"; ?>
+include "./header.php";
+?>
 <div class="container" style="max-width: 800px;">
     <br>
     <center>

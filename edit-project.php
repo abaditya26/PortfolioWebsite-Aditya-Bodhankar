@@ -7,15 +7,11 @@ if (isset($_SESSION['status'])) {
 } else {
     echo "<script>document.location='./';</script>";
 }
-
-
 if (isset($_POST['title'])) {
     extract($_POST);
-
     if (!isset($_SESSION)) {
         session_start();
     }
-
     include "./database.php";
     $query = "UPDATE projects SET title = '$title', description='$description', link='$link' WHERE _id=$id";
     $result = mysqli_query($conn, $query);

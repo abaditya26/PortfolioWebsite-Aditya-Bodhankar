@@ -64,8 +64,7 @@ $dirs =  glob('*', GLOB_ONLYDIR);
 
             .container {
                 width: auto;
-                max-width: 680px;
-
+                max-width: 800px;
             }
 
             .footer {

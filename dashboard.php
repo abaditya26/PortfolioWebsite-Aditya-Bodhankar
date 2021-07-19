@@ -1,6 +1,5 @@
-<?php include "./header.php"; ?>
-<?php
-
+<?php 
+include "./header.php"; 
 if (isset($_SESSION['status'])) {
     if ($_SESSION['status'] != "admin") {
         echo "<script>document.location='./';</script>";
@@ -8,7 +7,6 @@ if (isset($_SESSION['status'])) {
 } else {
     echo "<script>document.location='./';</script>";
 }
-
 include "./database.php";
 $query = "SELECT * FROM ipcount";
 $result = mysqli_query($conn, $query);
@@ -18,7 +16,6 @@ if ($result) {
 } else {
     echo "<script>colsole.log('ip count error');console.log(\"" . mysqli_error($conn) . "\");</script>";
 }
-
 $query = "SELECT SUM(`count`) FROM ipcount;";
 $result = mysqli_query($conn, $query);
 $visits = 0;
@@ -27,7 +24,6 @@ if ($result) {
 } else {
     echo "<script>colsole.log('ip sum error');console.log(\"" . mysqli_error($conn) . "\");</script>";
 }
-
 $query = "SELECT COUNT(*) FROM projects";
 $result = mysqli_query($conn, $query);
 $projectCount = 0;
@@ -66,11 +62,11 @@ if ($result) {
                 <div class="col-md-6" style="margin-top: 5%;">
                     <center>
                         <h3>
-                            Total Posts
+                            Total Requests
                             <br>
                             1
                             <br>
-                            <a href="./posts.php" class="btn btn-outline-success">Manage Posts</a>
+                            <a href="./requests.php" class="btn btn-outline-success">Manage Requests</a>
                         </h3>
                     </center>
                 </div>

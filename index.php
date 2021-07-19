@@ -16,19 +16,18 @@ if ($result) {
 
 <style>
     .desc-div {
-        padding-right: 20px;
+        padding-right: 10px;
         border-radius: 10px;
     }
 
     .desc-div-2 {
-        padding-left: 20px;
+        padding-left: 10px;
         border-radius: 10px;
     }
 </style>
 
 <div class="container">
     <section data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" class="aos-init">
-
         <center>
             <img id="tilt" class="rounded-circle d-block mx-auto m-3 aos-init" src="./images/profile.jpg" height="256" width="256" data-aos="zoom-in-up">
             <br>
@@ -60,7 +59,6 @@ if ($result) {
                 </svg>
             </a>
             <br>
-
             <br>
             <hr class="hr" style="border-color: white;">
             <br>

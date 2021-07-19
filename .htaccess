@@ -2,9 +2,9 @@ RewriteEngine On
 RewriteCond %{HTTP:X-Forwarded-Proto} =http
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-ErrorDocument 400 https://localhost/PortfolioWebsite/error.php?error=400
-ErrorDocument 401 https://localhost/PortfolioWebsite/error.php?error=401
-ErrorDocument 403 https://localhost/PortfolioWebsite/error.php?error=403
-ErrorDocument 404 https://localhost/PortfolioWebsite/error.php?error=404
-ErrorDocument 500 https://localhost/PortfolioWebsite/error.php?error=500
-ErrorDocument 503 https://localhost/PortfolioWebsite/error.php?error=503
+ErrorDocument 400 http://localhost/PortfolioWebsite/error-page.php?error=400
+ErrorDocument 401 http://localhost/PortfolioWebsite/error-page.php?error=401
+ErrorDocument 403 http://localhost/PortfolioWebsite/error-page.php?error=403
+ErrorDocument 404 http://localhost/PortfolioWebsite/error-page.php?error=404
+ErrorDocument 500 http://localhost/PortfolioWebsite/error-page.php?error=500
+ErrorDocument 503 http://localhost/PortfolioWebsite/error-page.php?error=503
