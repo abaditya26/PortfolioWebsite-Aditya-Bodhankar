@@ -1,3 +1,19 @@
+<?php 
+if(isset($_POST['name'])){
+    include "./database.php";
+    date_default_timezone_set("Asia/Kolkata");
+    $timestamp = date("d-M-Y h:i:sa");
+    $query = "INSERT INTO `contact_us`(`name`, `email`, `phoneNo`, `description`, `timestamp`) VALUES ('$name','$email','$phoneNo','$description','$timestamp')";
+    $result = mysqli_query($conn, $query);
+    if($result){
+        echo "<script>alert('request sent');document.location='./';</script>";
+    }else{
+        echo "<script>alert('error to execute query');document.location='./';</script>";
+    }
+    exit;
+}
+?>
+
 <?php include "./header.php"; ?>
 <div class="container" style="max-width: 800px;">
     <form action="./contact-me.php" method="post">
@@ -30,7 +46,3 @@
 </form>
 </div>
 <?php include "./footer.php"; ?>
-
-<!-- 
-    _id, name, email, phoneNo, desc
- -->
