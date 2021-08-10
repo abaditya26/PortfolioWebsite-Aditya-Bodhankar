@@ -1,5 +1,5 @@
-<?php 
-include "./header.php"; 
+<?php
+include "./header.php";
 if (isset($_SESSION['status'])) {
     if ($_SESSION['status'] != "admin") {
         echo "<script>document.location='./';</script>";
@@ -91,5 +91,53 @@ if ($result) {
             </div>
         </div>
     </div>
+    <hr class="hr">
+    <div class="container">
+        <center>
+            <h3>
+                Recent Requests
+            </h3>
+        </center>
+        <hr class="hr">
+        <table class="table table-stripped">
+            <thead>
+                <th class="text-center">
+                    #
+                </th>
+                <th class="text-center">
+                    Name
+                </th>
+                <th class="text-center">
+                    Time Stamp
+                </th>
+                <th class="text-center">
+                    Action
+                </th>
+            </thead>
+            <tbody>
+                <?php for ($i = 0; $i < 5; $i++) { ?>
+                    <tr>
+                        <td class="text-center">
+                            1
+                        </td>
+                        <td class="text-center">
+                            Name Here
+                        </td>
+                        <td class="text-center">
+                            time stamp here
+                        </td>
+                        <td class="text-center">
+                            <a href="#" class="btn btn-outline-success">View Request</a>
+                            <a href="#" class="btn btn-outline-primary">Mark as read</a>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+        <center>
+            <a href="#" class="btn btn-success">View All</a>
+        </center>
+    </div>
+    <hr class="hr">
 </div>
 <?php include "./footer.php"; ?>
