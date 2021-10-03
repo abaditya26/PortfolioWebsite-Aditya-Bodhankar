@@ -1,13 +1,13 @@
-<?php 
-if(isset($_POST['name'])){
+<?php
+if (isset($_POST['name'])) {
     include "./database.php";
     date_default_timezone_set("Asia/Kolkata");
     $timestamp = date("d-M-Y h:i:sa");
     $query = "INSERT INTO `contact_us`(`name`, `email`, `phoneNo`, `description`, `timestamp`) VALUES ('$name','$email','$phoneNo','$description','$timestamp')";
     $result = mysqli_query($conn, $query);
-    if($result){
+    if ($result) {
         echo "<script>alert('request sent');document.location='./';</script>";
-    }else{
+    } else {
         echo "<script>alert('error to execute query');document.location='./';</script>";
     }
     exit;
@@ -17,11 +17,11 @@ if(isset($_POST['name'])){
 <?php include "./header.php"; ?>
 <div class="container" style="max-width: 800px;">
     <form action="./contact-me.php" method="post">
-    <center><br><br>
-        <h4>
-            Contact Me
-        </h4>
-    </center>
+        <center><br><br>
+            <h4>
+                Contact Me
+            </h4>
+        </center>
         <div class="form-group">
             <label for="name">Enter Your Name</label>
             <input type="text" name="name" id="name" class="form-control" placeholder="Enter Your Name" required>
@@ -42,7 +42,6 @@ if(isset($_POST['name'])){
             <input type="reset" value="Reset Form" class="btn btn-danger">
             <input type="submit" value="Submit Data" class="btn btn-success">
         </div>
-
-</form>
+    </form>
 </div>
 <?php include "./footer.php"; ?>
