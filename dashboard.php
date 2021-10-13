@@ -39,11 +39,11 @@ if ($result) {
 $query = "SELECT * FROM `contact_us`";
 $result = mysqli_query($conn, $query);
 $contactRequests = [];
-if($result){
-    while($row = mysqli_fetch_row($result)){
+if ($result) {
+    while ($row = mysqli_fetch_row($result)) {
         array_push($contactRequests, $row);
     }
-}else{
+} else {
     echo "<script>console.log(\"" . mysqli_error($conn) . "\");</script>";
 }
 
@@ -130,19 +130,19 @@ if($result){
                 </th>
             </thead>
             <tbody>
-                <?php if(sizeof($contactRequests)==0){
-                    ?>
+                <?php if (sizeof($contactRequests) == 0) {
+                ?>
                     <tr>
                         <td colspan="4" class="text-center">
                             <h2>No Requests currently</h2>
                         </td>
                     </tr>
-                    <?php
+                <?php
                 } ?>
                 <?php for ($i = 0; $i < sizeof($contactRequests); $i++) { ?>
                     <tr>
                         <td class="text-center">
-                            <?php echo $i+1; ?>
+                            <?php echo $i + 1; ?>
                         </td>
                         <td class="text-center">
                             <?php echo $contactRequests[$i][1]; ?>
@@ -152,7 +152,15 @@ if($result){
                         </td>
                         <td class="text-center">
                             <a href="#" class="btn btn-outline-success">View Request</a>
-                            <a href="#" class="btn btn-outline-primary" onclick="markAsRead('<?php echo $contactRequests[$i][0]; ?>')">Mark as read</a>
+                            <?php if ($contactRequests[$i][6] == 0) {
+                            ?>
+                                <a href="#" class="btn btn-outline-primary" onclick="markAsRead('<?php echo $contactRequests[$i][0]; ?>')">Mark as read</a>
+                            <?php
+                            } else {
+                            ?>
+                                <a href="#" class="btn btn-outline-primary disabled">Already Read</a>
+                            <?php
+                            } ?>
                         </td>
                     </tr>
                 <?php } ?>
@@ -167,7 +175,7 @@ if($result){
 <?php include "./footer.php"; ?>
 
 <script>
-    function markAsRead(id){
-        document.location = './mark_as_read.php?id='+id;
+    function markAsRead(id) {
+        document.location = './mark_as_read.php?id=' + id;
     }
 </script>
