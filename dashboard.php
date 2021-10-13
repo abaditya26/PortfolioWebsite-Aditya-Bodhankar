@@ -138,8 +138,12 @@ if ($result) {
                         </td>
                     </tr>
                 <?php
-                } ?>
-                <?php for ($i = 0; $i < sizeof($contactRequests); $i++) { ?>
+                }
+                $count = sizeof($contactRequests);
+                if(sizeof($contactRequests)>20){
+                    $count = 20;
+                }
+                for ($i = 0; $i < $count; $i++) { ?>
                     <tr>
                         <td class="text-center">
                             <?php echo $i + 1; ?>
