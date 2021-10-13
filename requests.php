@@ -68,7 +68,7 @@ if ($result) {
                         <?php echo $contactRequests[$i][5]; ?>
                     </td>
                     <td class="text-center">
-                        <a href="#" class="btn btn-outline-success">View Request</a>
+                        <a href="./view-request.php?id=<?php echo $contactRequests[$i][0]; ?>" class="btn btn-outline-success">View Request</a>
                         <?php if ($contactRequests[$i][6] == 0) {
                         ?>
                             <a href="#" class="btn btn-outline-primary" onclick="markAsRead('<?php echo $contactRequests[$i][0]; ?>')">Mark as read</a>
