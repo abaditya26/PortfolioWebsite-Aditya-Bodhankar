@@ -152,7 +152,7 @@ if($result){
                         </td>
                         <td class="text-center">
                             <a href="#" class="btn btn-outline-success">View Request</a>
-                            <a href="#" class="btn btn-outline-primary">Mark as read</a>
+                            <a href="#" class="btn btn-outline-primary" onclick="markAsRead('<?php echo $contactRequests[$i][0]; ?>')">Mark as read</a>
                         </td>
                     </tr>
                 <?php } ?>
@@ -165,3 +165,9 @@ if($result){
     <hr class="hr">
 </div>
 <?php include "./footer.php"; ?>
+
+<script>
+    function markAsRead(id){
+        document.location = './mark_as_read.php?id='+id;
+    }
+</script>
