@@ -36,7 +36,7 @@ if ($result) {
     echo "<script>console.log(\"" . mysqli_error($conn) . "\");</script>";
 }
 
-$query = "SELECT * FROM `contact_us`";
+$query = "SELECT * FROM `contact_us` ORDER BY _id DESC";
 $result = mysqli_query($conn, $query);
 $contactRequests = [];
 if ($result) {
