@@ -1,5 +1,6 @@
 <?php
 if (isset($_POST['name'])) {
+    extract($_POST);
     include "./database.php";
     date_default_timezone_set("Asia/Kolkata");
     $timestamp = date("d-M-Y h:i:sa");

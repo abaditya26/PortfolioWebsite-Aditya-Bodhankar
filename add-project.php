@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_SESSION['status'])) {
     if ($_SESSION['status'] != "admin") {
         echo "<script>document.location='./';</script>";

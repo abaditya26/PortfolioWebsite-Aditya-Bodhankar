@@ -7,6 +7,7 @@ if (isset($_SESSION['status'])) {
 } else {
     echo "<script>document.location='./';</script>";
 }
+
 include "./database.php";
 $query = "SELECT * FROM ipcount";
 $result = mysqli_query($conn, $query);
@@ -16,6 +17,7 @@ if ($result) {
 } else {
     echo "<script>colsole.log('ip count error');console.log(\"" . mysqli_error($conn) . "\");</script>";
 }
+
 $query = "SELECT SUM(`count`) FROM ipcount;";
 $result = mysqli_query($conn, $query);
 $visits = 0;
@@ -24,6 +26,7 @@ if ($result) {
 } else {
     echo "<script>colsole.log('ip sum error');console.log(\"" . mysqli_error($conn) . "\");</script>";
 }
+
 $query = "SELECT COUNT(*) FROM projects";
 $result = mysqli_query($conn, $query);
 $projectCount = 0;
@@ -32,9 +35,21 @@ if ($result) {
 } else {
     echo "<script>console.log(\"" . mysqli_error($conn) . "\");</script>";
 }
-?>
-<div class="container" style="margin-top: 5%;">
 
+$query = "SELECT * FROM `contact_us`";
+$result = mysqli_query($conn, $query);
+$contactRequests = [];
+if($result){
+    while($row = mysqli_fetch_row($result)){
+        array_push($contactRequests, $row);
+    }
+}else{
+    echo "<script>console.log(\"" . mysqli_error($conn) . "\");</script>";
+}
+
+?>
+
+<div class="container" style="margin-top: 5%;">
     <div class="row">
         <div class="col-md-4">
             <center>
@@ -115,16 +130,25 @@ if ($result) {
                 </th>
             </thead>
             <tbody>
-                <?php for ($i = 0; $i < 5; $i++) { ?>
+                <?php if(sizeof($contactRequests)==0){
+                    ?>
+                    <tr>
+                        <td colspan="4" class="text-center">
+                            <h2>No Requests currently</h2>
+                        </td>
+                    </tr>
+                    <?php
+                } ?>
+                <?php for ($i = 0; $i < sizeof($contactRequests); $i++) { ?>
                     <tr>
                         <td class="text-center">
-                            1
+                            <?php echo $i+1; ?>
                         </td>
                         <td class="text-center">
-                            Name Here
+                            <?php echo $contactRequests[$i][1]; ?>
                         </td>
                         <td class="text-center">
-                            time stamp here
+                            <?php echo $contactRequests[$i][5]; ?>
                         </td>
                         <td class="text-center">
                             <a href="#" class="btn btn-outline-success">View Request</a>
